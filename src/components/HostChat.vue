@@ -26,7 +26,7 @@
                 </div>
             </div>
             </div>
-            <button class="modal-close" @click="toggleGameRule">Close</button>
+            <button class="modal-close bg-blue-900 text-lg font-bold hover:bg-blue-700" @click="toggleGameRule">Close</button>
           </div>
         </div>
       </transition>
@@ -100,14 +100,11 @@
   .modal-close {
     margin-top: 1rem;
     padding: 0.5rem 1rem;
-    background-color: #f3f3f3;
     border: none;
     border-radius: 4px;
+    color: #e5e5e5;
     cursor: pointer;
   }
   
-  .modal-close:hover {
-    background-color: #e5e5e5;
-  }
   </style>
   

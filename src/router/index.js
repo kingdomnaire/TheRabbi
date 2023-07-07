@@ -6,6 +6,7 @@ import GuestPageView from '@/views/GuestPageView.vue';
 import AddQuestionView from '@/views/AddQuestionView.vue';
 import MessageView from '@/views/MessageView.vue';
 import LoginView from '@/views/LoginView.vue'
+import EditQuestionView from '@/views/EditQuestionView.vue'
 
 
 
@@ -31,6 +32,12 @@ const routes = [
     path: '/guestScreen',
     name: 'guestScreen',
     component: GuestPageView,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: '/dashboard/questions',
+    name: 'questions',
+    component: EditQuestionView,
     meta: { requiresAuth: true },
   },
   {
