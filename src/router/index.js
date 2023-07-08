@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import App from '@/App.vue';
+//import App from '@/App.vue';
 import HostPageView from '@/views/HostPageView.vue';
 import GameBoardView from '@/views/GameBoardView.vue';
 import GuestPageView from '@/views/GuestPageView.vue';
@@ -12,9 +12,9 @@ import EditQuestionView from '@/views/EditQuestionView.vue'
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: App,
+    path: '/dashboard/questions',
+    name: 'questions',
+    component: GuestPageView,
     meta: { requiresAuth: true },
   },
   {
