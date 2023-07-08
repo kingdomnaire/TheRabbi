@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
-//import App from '@/App.vue';
+import App from '@/App.vue';
 import HostPageView from '@/views/HostPageView.vue';
 import GameBoardView from '@/views/GameBoardView.vue';
 import GuestPageView from '@/views/GuestPageView.vue';
@@ -12,9 +12,9 @@ import EditQuestionView from '@/views/EditQuestionView.vue'
 
 const routes = [
   {
-    path: '/dashboard/questions',
-    name: 'questions',
-    component: GuestPageView,
+    path: '/',
+    name: 'home',
+    component: App,
     meta: { requiresAuth: true },
   },
   {
@@ -57,7 +57,13 @@ const routes = [
     name: 'message',
     component: MessageView,
     meta: { requiresAuth: true },
-  }
+  },
+  // redirect
+  {
+    path: '/',
+    redirect: '/dashboard/panel',
+    meta: { requiresAuth: true },
+  },
 ];
 
 
