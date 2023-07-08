@@ -12,7 +12,7 @@ import EditQuestionView from '@/views/EditQuestionView.vue'
 
 const routes = [
   {
-    path: '/',
+    path: '/home',
     name: 'home',
     component: App,
     meta: { requiresAuth: true },
