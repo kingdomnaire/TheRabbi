@@ -1,11 +1,11 @@
 <template>
-    <div class=" fixed">
+    <div class="">
       <div class="vertical-nav bg-blue-950 text-gray-100 text-xl font-bold">
         WHO WANT'S TO BE A RABBI
       </div>
   
      <div class="settings-nav text-gray-100">
-      <nav class="horizontal-nav bg-blue-800 -ml-2">
+      <nav class=" bg-blue-800 -ml-2 h-[94vh] px-5 ">
         <p class="nav-title">DashBoard</p>
       <router-link class="router h-10 font-bold items-center hover:bg-gray-400 hover:text-blue-900" to="/dashboard/panel" >Control Panel</router-link>
       <router-link class="router h-10 font-bold items-center hover:bg-gray-400 hover:text-blue-900" to="/dashboard/question" >Add Question</router-link>
@@ -38,17 +38,12 @@
     justify-content: space-between;
     padding: 10px;
     align-items: center;
-    height: 10vh;
+    height: 20%;
   }
   .router-link-active {
   background-color: #f7fafc; /* Gray 300 */
   color: #2b6cb0; /* Blue 700 */
-}
-  .horizontal-nav{
-    padding: 2%;
-    height: 90vh;
-  }
-  
+}  
   .close-icon:hover{
     transform: scale(.9);
   }
@@ -59,11 +54,9 @@
     grid-template-columns: 200px 1fr;
     gap: 10px;
     padding: 0 5px;
+    height: 100%;
   }
   
-  .settings-nav.admin{
-    grid-template-columns:auto;
-  }
   
   .nav-title{
     font-size: 20px;

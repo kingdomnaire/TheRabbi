@@ -1,14 +1,14 @@
 <template>
-    <div class="mt-10 bg-indigo-900 w-full rounded-xl h-36 grid shadow-2xl">
-      <div class="mt-4">
-        <button class="mx-8 bg-blue-950 h-8 text-gray-100 px-4 rounded-md hover:bg-blue-900" type="button">New Guest</button>
-        <button class="ml-12 bg-blue-950 h-8 text-gray-100 px-4 rounded-md hover:bg-blue-900" @click="playStart" type="button">Walk Away</button>
+    <div class="mt-3 bg-indigo-900 w-[70%] rounded-xl  grid shadow-2xl h-[100%] justify-center ">
+      <div class="mt-4 flex">
+        <button class="mx-3 bg-blue-950 h-[70%] text-gray-100 px-4 rounded-md hover:bg-blue-900" type="button">New Guest</button>
+        <button class="ml-3 bg-blue-950 h-[70%] text-gray-100 px-4 rounded-md hover:bg-blue-900" @click="playStart" type="button">Walk Away</button>
       </div>
-      <div class="">
-        <button class="mx-8 bg-blue-950 h-8 text-gray-100 px-4 rounded-md hover:bg-blue-900" type="button">Quit Game</button>
-        <button class="ml-12 bg-blue-950 h-8 text-gray-100 px-4 rounded-md hover:bg-blue-900" type="button">Reveal Ans</button>
+      <div class=" flex">
+        <button class="mx-3 bg-blue-950 h-[70%] text-gray-100 px-4 rounded-md hover:bg-blue-900" type="button">Quit Game</button>
+        <button class="ml-3 bg-blue-950 h-[70%] text-gray-100 px-4 rounded-md hover:bg-blue-900" type="button">Reveal Ans</button>
       </div>
-      <button class="mx-4 bg-blue-950 h-8 text-gray-100 px-4 rounded-md hover:bg-blue-900" type="button">Generate New Question</button>
+      <button class="mx-4 bg-blue-950 h-[70%] text-gray-100 px-4 rounded-md hover:bg-blue-900" type="button">Generate New Question</button>
     </div>
 </template>
   

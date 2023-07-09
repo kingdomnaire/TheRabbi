@@ -1,5 +1,5 @@
 <template>
-    <div class="container h-[80vh] drop-shadow-md rounded-md mt-8 mr-20 pt-14 px-8 bg-blue-600 md:w-1/4 flex-wrap flex flex-col justify-center items-center">
+    <div class="container h-[35rem] drop-shadow-md rounded-md mt-8 mr-20 pt-14 px-8 bg-blue-600 md:w-[30%] flex-wrap flex flex-col justify-center items-center">
   
       <div class="-mt-4 fixed">
         <h3 class="text-center text-xl font-bold my-4">Chat Here</h3>

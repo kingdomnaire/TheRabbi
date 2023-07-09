@@ -1,13 +1,12 @@
 <template>
-  <div class="container h-[80vh] drop-shadow-md rounded-md mt-8 mr-56 float-right pt-14 
-  px-8 bg-blue-600 md:w-5/6 flex-wrap flex flex-col justify-center ">
+  <div class="container h-[90%] drop-shadow-md rounded-md mt-3 pt-5
+  px-8 bg-blue-600 md:w-[90%] justify-center max-md:h-[100%]">
     <FirstButton/>
     <QuestionBox class="w-2/4"/>
     <QuestionCategory class="ml-[52%]"/>
-     <div class="ml-[70%] ">
+     <div class="ml-[74%] ">
       <QuestionTag/>
      </div>
-    
     <div class="grid grid-cols-3 w-full sm:grid-cols-6 gap-4 mt-10">
       <div class="sm:col-span-3">
         <ControlBtn/>
@@ -15,11 +14,7 @@
       <div class="sm:col-span-3 justify-center">
         <SoundBtn />
       </div>
-      <div class="sm:col-span-3">
-        <!--<LifeLine/>-->
-      </div>
     </div>
-    <!--<GameMeter/>-->
   </div>
 </template>
 
