@@ -1,5 +1,5 @@
 <template>
-    <div class="">
+    <div class=" fixed">
       <div class="vertical-nav bg-blue-950 text-gray-100 text-xl font-bold">
         WHO WANT'S TO BE A RABBI
       </div>
