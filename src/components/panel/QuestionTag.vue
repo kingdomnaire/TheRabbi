@@ -1,6 +1,6 @@
 <template>
     <div class="bg-gray-200 grid w-40 -mt-32 justify-center h-32 rounded-xl shadow-2xl">
-      <h4 class="text-green-900 font-bold">Question Tag</h4>
+      <h4 class="text-green-900 font-bold">Question Level</h4>
       <button
         :class="['bg-green-600 mb-1 text-gray-100 rounded hover:bg-green-700', { 'bg-gray-900': activeButton === 'easy' }]"
         type="button"

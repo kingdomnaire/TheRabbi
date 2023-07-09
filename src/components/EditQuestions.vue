@@ -2,8 +2,8 @@
     <div class="container h-[80vh] drop-shadow-md rounded-md mt-8 mr-56 float-right pt-14 px-8  md:w-[160vh] flex-wrap flex flex-col">
       <div class="absolute z-30 bg-opacity-80 flex w-[150vh]">
         <table class="w-[150vh]">
-          <thead class="w-[150vh]">
-            <tr class="bg-blue-600 h-10 w-[150vh] text-gray-300">
+          <thead class="w-[150vh] bg-blue-600">
+            <tr class=" h-10 w-[150vh] text-gray-300">
               <th>Questions</th>
               <th>Answers</th>
               <th>Correct Answer</th>

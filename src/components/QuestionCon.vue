@@ -137,7 +137,7 @@ export default {
     answers: options, // Include the answers in the payload
     category,
     level,
-    correct_answer: correctAnswer
+    correct: correctAnswer
   };
 
   // Make a POST request using Axios
