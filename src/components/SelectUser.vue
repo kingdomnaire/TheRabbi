@@ -1,9 +1,9 @@
 <template>
-    <div class="h-80 w-full flex justify-center items-center mt-48 absolute bg-blue-950">
-        <div class="bg-gray-200 h-full w-5/6 rounded-lg shadow-xl">
+    <div class="h-[42%] w-full flex justify-center items-center mt-10 absolute bg-blue-950">
+        <div class="bg-gray-200 h-full w-[95%] rounded-lg shadow-xl">
             <div class=" flex">
                 <!--player button-->
-                <div class="bg-gray-300 block text-center m-2 rounded ml-2 h-full w-2/4">
+                <div class="bg-gray-300 block text-center m-2 rounded ml-2 h-full w-[53%]">
                     <PlayerOne />
                     <PlayerTwo />
                     <PlayerThree />

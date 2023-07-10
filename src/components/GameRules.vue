@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-10">
+  <div class="mt-[9rem]">
     <div class="bg-gray-100 hover:bg-gray-300 text-blue-950 cursor-pointer text-bold w-24 ml-40 text-center rounded" @click="toggleGameRule"> Game Rule</div>
 
     <transition name="fade">

@@ -1,6 +1,6 @@
 <template>
  <div>
-<div id="homepage-slider" class="st-slider w-1/4 mt-40 ml-[40%]">
+<div id="homepage-slider" class="st-slider w-1/4  ml-[40%]">
 
     
       <input type="radio" class="cs_anchor radio" name="slider" id="slide1"/>

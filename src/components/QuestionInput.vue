@@ -1,5 +1,5 @@
 <template>
-    <div class="-mt-32 w-3/5 ml-80 max-sm:float-none max-sm:ml-0 max-sm:mt-4 max-sm:w-full max-sm:bg-blue-950
+    <div class="-mt-[18%] w-3/5 ml-80 max-sm:float-none max-sm:ml-0 max-sm:mt-4 max-sm:w-full max-sm:bg-blue-950
       max-md:float-none max-md:mt-14 max-md:ml-8 ">
       <!--question box-->
         <div class="col-span-full mb-4 ml-10 w-full max-sm:w-5/6 max-md:w-full max-md:ml-0 max-sm:ml-9">

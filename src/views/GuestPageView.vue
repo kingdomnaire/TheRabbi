@@ -4,20 +4,9 @@
 <div class=" text-gray-100 ml-3 font-bold text-xl text-center">Guest panel</div>
 
       <LifeLine class="z-50"/>
-        <div class="grid gap-2 max-sm:grid-cols-2 font-bold text-xl text-gray-100 float-right mr-48 mt-20
-        max-sm:float-none max-sm:mr-0 max-sm:ml-10 max-sm:mt-10 sm:mr-14 sm:mt-8 sm:text-lg sm:gap-1">
-          <div
-            v-for="(price, index) in getPrices"
-            :key="index"
-            :class="{ stone: price.value == getCurrentPrice }"
-            :style="{ 'background-color': price.color }"
-            class="w-full sm:w-auto sm:float-none sm:mr-0 sm:mt-2"
-          >
-            {{ price.label }}
-          </div>
-      </div>
-    
-      <div class="mt-18 w-3/5 float-right max-sm:float-none max-sm:ml-0 max-sm:mt-4 max-sm:w-full max-sm:bg-blue-950
+      <MoneyLevel/>
+
+      <div class="mt-18 mb-5 w-3/5 float-right max-sm:float-none max-sm:ml-0 max-sm:mt-4 max-sm:w-full max-sm:bg-blue-950
       max-md:float-none max-md:mt-14 max-md:ml-8 ">
       <!--question box-->
         <div class="col-span-full mb-4 ml-10 w-full max-sm:w-5/6 max-md:w-full max-md:ml-0 max-sm:ml-9">
@@ -86,12 +75,13 @@
     import PlayerMeter from '@/components/PlayerMeter.vue';
     import LifeLine from '@/components/panel/LifeLine.vue';
     import CarouselImage from '@/components/CarouselImage.vue';
+    import MoneyLevel from '@/components/MoneyLevel.vue';
     import { mapGetters, mapActions } from 'vuex';
     
     
     export default {
       name: 'HostPageView',
-      components: { GameRules, PlayerMeter, LifeLine, CarouselImage },
+      components: { GameRules, PlayerMeter, LifeLine, CarouselImage, MoneyLevel },
     
       computed:{
         ...mapGetters('price', ['getCurrentPrice', 'getPrices'])

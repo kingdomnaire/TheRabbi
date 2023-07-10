@@ -1,6 +1,6 @@
 <template>
-  <div class="flex w-80 gap-6 ml-[70%] items-center justify-center 
-   h-28 rounded-xl  relative z-[9999]">
+  <div class="flex w-72 gap-6 ml-[5%] items-center justify-center 
+   h-18 rounded-xl  relative z-[9999]">
     <AudienceOverlay/>
     <FiftyOverlay/>
     <PhoneOverlay/>
