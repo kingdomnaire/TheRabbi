@@ -4,6 +4,7 @@
         <table class="w-[150vh] overflow-y-auto max-h-[30vh]">
           <thead class="w-[90%] bg-blue-600 ">
             <tr class=" h-10 w-[90%] text-gray-300">
+              <th>S/N</th>
               <th>Questions</th>
               <th>Answers</th>
               <th>Correct Answer</th>
@@ -13,6 +14,7 @@
           </thead>
           <tbody class="w-[90%]">
             <tr v-for="question in questions" :key="question._id" class="bg-blue-900 h-10 text-gray-200 font-bold border w-[150vh]">
+              <td class="pr-10 pl-4 w-[2%]">{{ index + 1 }}</td>
               <td class="pr-10 pl-4 w-[30%]">{{ question.question }}</td>
               <td class="pr-4 pl-2 w-[30px]">{{ formatAnswers(question.answers) }}</td>
               <td class="pr-4 pl-2 w-[10px]">{{ question.correct_answer }}</td>
@@ -77,5 +79,3 @@
     },
   };
   </script>
-  
-  
