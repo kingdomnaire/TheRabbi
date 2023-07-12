@@ -13,7 +13,7 @@
             </tr>
           </thead>
           <tbody class="w-[90%]">
-            <tr v-for="question in questions" :key="question._id" class="bg-blue-900 h-10 text-gray-200 font-bold border w-[150vh]">
+            <tr v-for="(question, index) in questions" :key="question._id" class="bg-blue-900 h-10 text-gray-200 font-bold border w-[150vh]">
               <td class="pr-10 pl-4 w-[2%]">{{ index + 1 }}</td>
               <td class="pr-10 pl-4 w-[30%]">{{ question.question }}</td>
               <td class="pr-4 pl-2 w-[30px]">{{ formatAnswers(question.answers) }}</td>
