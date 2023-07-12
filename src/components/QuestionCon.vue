@@ -1,6 +1,10 @@
 <template>
     <div class="container h-[100%] drop-shadow-md rounded-md mt-8 mr-20 pt-20  pb-10
   px-8 bg-blue-600 md:w-[60%] flex-wrap flex flex-col justify-center items-center">
+
+  <div v-if="showSuccessMessage" class="bg-green-600 -mt-10 mb-5 text-white py-2 px-4 rounded-md z-[999]">
+      Question sent successfully!
+    </div>
   
     <div class=" w-[80%] max-sm:float-none max-sm:ml-0 max-sm:mt-4 max-sm:w-full max-sm:bg-blue-950
       max-md:float-none max-md:mt-14 max-md:ml-8">
@@ -112,6 +116,11 @@ import axios from 'axios';
 
 export default {
   name: 'MessageCon',
+  data() {
+    return {
+      showSuccessMessage: false
+    };
+  },
   methods: {
     sendQuestion() {
   // Retrieve the question from the textarea
@@ -145,6 +154,10 @@ export default {
     .post('https://quizzes-bmo0.onrender.com/question', payload)
     .then(response => {
       console.log('Question sent successfully:', response.data);
+      // Hide the success message after 2 seconds
+      setTimeout(() => {
+            this.showSuccessMessage = true;
+          }, 200);
       // Reset the form or show a success message
     })
     .catch(error => {

@@ -2,7 +2,7 @@
     <div class="container h-[80vh] drop-shadow-md rounded-md pt-14 px-8  md:w-[160vh] flex-wrap flex flex-col">
       <div class="absolute z-30 bg-opacity-80 flex w-[150vh] overflow-y-auto max-h-[80vh]">
         <table class="w-[150vh] overflow-y-auto max-h-[30vh]">
-          <thead class="w-[90%] bg-blue-600 ">
+          <thead class="w-[90%] bg-blue-600">
             <tr class=" h-10 w-[90%] text-gray-300">
               <th>S/N</th>
               <th>Questions</th>
