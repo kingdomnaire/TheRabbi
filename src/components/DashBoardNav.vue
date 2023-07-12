@@ -38,7 +38,9 @@
     justify-content: space-between;
     padding: 10px;
     align-items: center;
-    height: 20%;
+    height: 25%;
+    top: 0;
+  
   }
   .router-link-active {
   background-color: #f7fafc; /* Gray 300 */
