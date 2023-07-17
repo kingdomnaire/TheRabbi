@@ -1,5 +1,6 @@
 <template>
-  <div class="bg-blue-950 h-screen">
+  <body class="bg-blue-950 h-screen">
+    <div class="">
     <div class=" text-gray-100 ml-3 font-bold text-xl text-center">Host panel</div>
       
     <div>
@@ -13,6 +14,7 @@
       <SelectUser />
      <QuestionInput />
   </div>
+  </body>
   </template>
   
   <script>

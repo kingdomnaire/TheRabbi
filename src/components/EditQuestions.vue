@@ -1,6 +1,36 @@
 <template>
     <div class="container h-[80vh] drop-shadow-md rounded-md pt-14 px-8  md:w-[160vh] flex-wrap flex flex-col">
-      <div class="absolute z-30 bg-opacity-80 flex w-[150vh] overflow-y-auto max-h-[80vh]">
+        <div class="text-blue-950 -mt-10">
+          <h3 class="font-bold text-lg ">Filter the questions here.</h3>
+          <div class="flex gap-4">
+                <div>
+                  <label for="level" class="mr-2">Filter by level:</label>
+
+                  <select name="level" id="level" class="bg-blue-600 text-gray-200 rounded" @change="filterQuestions">
+                    <option value="">All Levels</option>
+                    <option value="Easy">Easy</option>
+                    <option value="Hard">Hard</option>
+                    <option value="Extreme">Extreme</option>
+                  </select>
+
+              </div>
+              <div>
+                <label class="mr-2" for="category">Filter by category:</label>
+
+              <select name="category" id="category" class="bg-blue-600 text-gray-200 rounded"  @change="filterQuestions">
+                <option value="">All Categories</option> 
+                <option value="Minor Prophet">Minor Prophet</option>
+                <option value="Wars">Wars</option>
+                <option value="Major Prophet">Major Prophet</option>
+                <option value="Parables">Parables</option>
+              </select>
+
+              </div>
+          </div>
+        </div>
+
+
+      <div class="absolute mt-10 z-30 bg-opacity-80 flex w-[150vh] overflow-y-auto max-h-[80vh]">
         <table class="w-[150vh] overflow-y-auto max-h-[30vh]">
           <thead class="w-[90%] bg-blue-600">
             <tr class=" h-10 w-[90%] text-gray-300">
@@ -13,7 +43,7 @@
             </tr>
           </thead>
           <tbody class="w-[90%]">
-            <tr v-for="(question, index) in questions" :key="question._id" class="bg-blue-900 h-10 text-gray-200 font-bold border w-[150vh]">
+            <tr v-for="(question, index) in filteredQuestions" :key="question._id" class="bg-blue-900 h-10 text-gray-200 font-bold border w-[150vh]">
               <td class="pr-10 pl-4 w-[2%]">{{ index + 1 }}</td>
               <td class="pr-10 pl-4 w-[30%]">{{ question.question }}</td>
               <td class="pr-4 pl-2 w-[30px]">{{ formatAnswers(question.answers) }}</td>
@@ -39,6 +69,7 @@
     data() {
       return {
         questions: [], // Initialize the questions array
+        filteredQuestions: [], // Initialize the filteredQuestions array
       };
     },
     created() {
@@ -76,6 +107,18 @@
         }
         return '';
       },
+
+      filterQuestions() {
+    const selectedLevel = document.querySelector('#level').value;
+    const selectedCategory = document.querySelector('#category').value;
+
+    // Filter questions based on selected level and category
+    this.filteredQuestions = this.questions.filter(question => {
+      const matchLevel = selectedLevel === '' || question.level === selectedLevel;
+      const matchCategory = selectedCategory === '' || question.category === selectedCategory;
+      return matchLevel && matchCategory;
+    });
+  },
     },
   };
   </script>
