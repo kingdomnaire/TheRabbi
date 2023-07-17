@@ -8,6 +8,7 @@ import MessageView from '@/views/MessageView.vue';
 import LoginView from '@/views/LoginView.vue'
 import EditQuestionView from '@/views/EditQuestionView.vue'
 import RegisterView from '@/views/RegisterView.vue'
+import FastestFingerView from '@/views/FastestFingerView.vue';
 
 
 
@@ -33,6 +34,11 @@ const routes = [
     path:'/register',
     name: 'register',
     component: RegisterView
+  },
+  {
+    path: '/dashboard/fastest',
+    name:'fastest',
+    component: FastestFingerView
   },
   {
     path: '/guestScreen',
@@ -80,7 +86,7 @@ const router = createRouter({
 
 
 const isAuthenticated = () =>{
-  const storedLogin =true //localStorage.getItem('loginRequest');
+  const storedLogin =localStorage.getItem('loginRequest');
   
   // Check if both email and password are present in local storage
   return JSON.parse(storedLogin || '{}');
@@ -89,7 +95,7 @@ const isAuthenticated = () =>{
 router.beforeEach((to, from, next) => {
   const isLoggedIn = isAuthenticated().email
 
-  if (to.meta.requiresAuth && isLoggedIn) {
+  if (to.meta.requiresAuth && !isLoggedIn) {
     next('/login')
     }else{
       next()

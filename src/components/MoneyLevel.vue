@@ -1,7 +1,11 @@
 <template>
     <div>
+      
         <div class="grid gap-60 max-sm:grid-cols-2 font-bold text-xl text-gray-100 float-right mr-48 
         max-sm:float-none max-sm:mr-0 max-sm:ml-10 max-sm:mt-10 sm:mr-14 sm:mt-8 sm:text-lg sm:gap-1">
+        <div class="text-sm font-bold float-right text-gray-200 mr-48 w-40">
+        Player name: {{ login.firstName }} {{ login.lastName }}
+      </div>
           <div>
             <ol>
                 <li class="bg-green-700 text-gray-100 px-2">15 - ₦200,000</li>
@@ -26,7 +30,19 @@
 </template>
 
 <script>
-export default{
-    name:'MoneyLevel',
-}
+export default {
+  name: 'MoneyLevel',
+  data() {
+    return {
+      login: {}, // Initialize the login object with an empty object
+    };
+  },
+  mounted() {
+    // Retrieve the login details from localStorage and store them in the data property
+    const loginData = localStorage.getItem('login');
+    if (loginData) {
+      this.login = JSON.parse(loginData);
+    }
+  },
+};
 </script>
