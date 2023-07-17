@@ -4,6 +4,7 @@
 <div class=" text-gray-100 ml-3 font-bold text-xl text-center">Guest panel</div>
 
       <LifeLine class="z-50"/>
+      <PlayerName class="z-60"/>
       <MoneyLevel/>
 
       <div class="mt-18 mb-5 w-3/5 float-right max-sm:float-none max-sm:ml-0 max-sm:mt-4 max-sm:w-full max-sm:bg-blue-950
@@ -76,12 +77,13 @@
     import LifeLine from '@/components/panel/LifeLine.vue';
     import CarouselImage from '@/components/CarouselImage.vue';
     import MoneyLevel from '@/components/MoneyLevel.vue';
+    import PlayerName from '@/components/PlayerName.vue';
     import { mapGetters, mapActions } from 'vuex';
     
     
     export default {
       name: 'HostPageView',
-      components: { GameRules, PlayerMeter, LifeLine, CarouselImage, MoneyLevel },
+      components: { GameRules, PlayerMeter, LifeLine, CarouselImage, MoneyLevel, PlayerName },
     
       computed:{
         ...mapGetters('price', ['getCurrentPrice', 'getPrices'])
