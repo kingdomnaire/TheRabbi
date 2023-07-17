@@ -3,7 +3,7 @@
     <div class=" text-gray-100 ml-3 font-bold text-xl text-center">Host panel</div>
       
     <div>
-      <GameRules />
+      <GameRules class="mt-[3rem]"/>
       <HostChat/>
       <div @click="generateQuestion"
       class="bg-green-800 w-40 text-lg font-bold text-gray-200 rounded mt-3 ml-32 text-center hover:bg-green-600 cursor-pointer">
@@ -11,7 +11,7 @@
       <div class="bg-green-800 w-40 text-lg font-bold text-gray-200 rounded mt-3 ml-32 text-center hover:bg-green-600 cursor-pointer">Revel Answer</div>
     </div>
       <SelectUser />
-      <QuestionInput />
+     <QuestionInput />
   </div>
   </template>
   
@@ -25,7 +25,8 @@
   
   export default {
     name: "HostPageView",
-    components: { GameRules, SelectUser, QuestionInput, HostChat },
+    components: { GameRules, SelectUser, QuestionInput,
+       HostChat },
     methods: {
   ...mapActions(['generateQuestion']),
 },

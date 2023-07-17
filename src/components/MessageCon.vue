@@ -1,10 +1,10 @@
 <template>
-    <div class="container h-[35rem] drop-shadow-md rounded-md mt-8 mr-20 pt-14 px-8 bg-blue-600 md:w-[30%] flex-wrap flex flex-col justify-center items-center">
+    <div class="container h-[90vh] drop-shadow-md rounded-md mt-8 mr-20 pt-14 px-8 bg-blue-600 md:w-[40%] flex-wrap flex flex-col justify-center items-center">
   
       <div class="-mt-4 fixed">
         <h3 class="text-center text-xl font-bold my-4">Chat Here</h3>
         <div class="w-50">
-          <div class="h-96 bg-indigo-700 rounded-lg bg-opacity-10 overflow-y-auto font-bold pb-5" :class="{ 'overflow-y-scroll': messages.length > 4 }">
+          <div class="h-[60vh] bg-indigo-700 rounded-lg bg-opacity-10 overflow-y-auto font-bold pb-5" :class="{ 'overflow-y-scroll': messages.length > 4 }">
           <div class="items-center justify-center float-right px-10">
             <!-- Display messages here -->
             <div v-for="(message, index) in messages" :key="index" class="mb-2 items-center justify-center w-52 bg-blue-300 rounded p-2">

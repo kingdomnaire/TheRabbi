@@ -158,13 +158,26 @@ export default {
       setTimeout(() => {
             this.showSuccessMessage = true;
           }, 200);
+
+          // Reset the input fields
+          this.resetInputFields();
       // Reset the form or show a success message
     })
     .catch(error => {
       console.error('Error sending question:', error);
       // Handle the error
     });
-}
+},
+resetInputFields() {
+      // Clear the textarea
+      document.querySelector('textarea').value = '';
+
+      // Clear all input fields
+      const inputElements = document.querySelectorAll('#input, #correctInput, #categoryInput, #levelInput');
+      inputElements.forEach((input) => {
+        input.value = '';
+      });
+    },
 
   }
 };

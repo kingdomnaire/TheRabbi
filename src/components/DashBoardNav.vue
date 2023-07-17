@@ -4,8 +4,8 @@
         WHO WANT'S TO BE A RABBI
       </div>
   
-     <div class="settings-nav text-gray-100">
-      <nav class=" bg-blue-800 -ml-2 h-[94vh] px-5 ">
+     <div class="settings-nav text-gray-100 h-[94vh]">
+      <nav class=" bg-blue-800 -ml-2 px-5 h-[94vh] ">
         <p class="nav-title">DashBoard</p>
       <router-link class="router h-10 font-bold items-center hover:bg-gray-400 hover:text-blue-900" to="/dashboard/panel" >Control Panel</router-link>
       <router-link class="router h-10 font-bold items-center hover:bg-gray-400 hover:text-blue-900" to="/dashboard/question" >Add Question</router-link>

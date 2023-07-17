@@ -63,7 +63,7 @@
         </div>
     </div>
     <PlayerMeter />
-    <div class="-mt-72">
+    <div class="-mt-[57vh]">
           <GameRules/>
       </div>
       <CarouselImage/>

@@ -1,5 +1,5 @@
 <template>
-    <div class="h-[42%] w-full flex justify-center items-center mt-10 absolute bg-blue-950">
+    <div class="h-[42%] w-full flex justify-center items-center mt-12 absolute bg-blue-950">
         <div class="bg-gray-200 h-full w-[95%] rounded-lg shadow-xl">
             <div class=" flex">
                 <!--player button-->
