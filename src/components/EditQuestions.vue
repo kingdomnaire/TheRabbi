@@ -52,7 +52,7 @@
               <td class="pr-4 pl-2 w-[10px]">{{ question.level }}</td>
               <td class="pr-4 pl-2 w-[10%] py-2">
                 <button @click="deleteQuestion(question._id)" class="text-gray-200 bg-red-900 w-20 h-10 rounded hover:bg-red-700 mr-2">Delete</button>
-                <button @click="deleteQuestion(question._id)" class="text-gray-200 bg-green-900 w-20 h-10 rounded hover:bg-green-700">Edit</button>
+                <button class="text-gray-200 bg-green-900 w-20 h-10 rounded hover:bg-green-700">Edit</button>
               </td>
             </tr>
           </tbody>
