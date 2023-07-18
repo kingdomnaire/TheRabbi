@@ -86,7 +86,7 @@ const router = createRouter({
 
 
 const isAuthenticated = () =>{
-  const storedLogin =localStorage.getItem('loginRequest');
+  const storedLogin =localStorage.getItem('login');
   
   // Check if both email and password are present in local storage
   return JSON.parse(storedLogin || '{}');

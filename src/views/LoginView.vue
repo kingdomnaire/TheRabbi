@@ -78,7 +78,7 @@ methods: {
         // Login successful
         localStorage.setItem("login", JSON.stringify(response.data));
         // You can handle the successful login here, e.g., redirect to the user dashboard
-        this.$router.push("/guestScreen");
+        this.$router.push("/dashboard/panel");
         console.log('Login successful:', response.data);
       } else {
         // Login failed
