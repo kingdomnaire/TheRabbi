@@ -2,6 +2,18 @@
     <div class="">
       <div class="vertical-nav bg-blue-950 text-gray-100 text-xl font-bold">
         WHO WANT'S TO BE A RABBI
+
+            <!-- Dropdown -->
+          <div class="relative mr-20 ">
+            <button @click="toggleDropdown" class="font-bold hover:text-gray-400">
+              Account
+              <i :class="isOpen ? 'fa fa-caret-up' : 'fa fa-caret-down'"></i>
+            </button>
+            <div v-if="isOpen" class="absolute bg-blue-950 text-gray-100 py-1.5 rounded-md shadow-lg font-light text-sm">
+              <p class="block px-4 py-2 hover:bg-gray-400 hover:text-blue-900 cursor-pointer">Change Password</p>
+              <p class="block px-4 py-2 hover:bg-gray-400 hover:text-blue-900 cursor-pointer" @click="logout">Logout</p>
+            </div>
+          </div>
       </div>
   
      <div class="settings-nav text-gray-100 h-[94vh]">
@@ -21,10 +33,28 @@
     </template>
   
   <script>
-  export default {
-      name: 'DashBoardNav',
-  }
-  </script>
+      export default {
+        name: 'DashBoardNav',
+        data() {
+          return {
+            isOpen: false,
+          };
+        },
+        methods: {
+          toggleDropdown() {
+            this.isOpen = !this.isOpen;
+          },
+
+          logout() {
+      // Remove the login data from localStorage
+      localStorage.removeItem("login");
+      // Redirect the user to the login page
+      this.$router.push("/login");
+    },
+        },
+      };
+</script>
+
     
     <style scoped>
   .logo{
