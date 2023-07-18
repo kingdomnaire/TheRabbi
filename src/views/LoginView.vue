@@ -25,7 +25,7 @@
               <!--<a href="#" class="font-semibold text-indigo-100 hover:text-blue-50">Forgot password?</a>-->
             </div>
           </div>
-          <div class="mt-2">
+          <div class="mt-2 mb-3">
             <input v-model="password" id="password" name="password" type="password" autocomplete="current-password" 
             class="block w-full rounded-md border-0 py-1.5 px-2 text-blue-900 font-bold shadow-sm ring-1 ring-inset
              ring-gray-300 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 

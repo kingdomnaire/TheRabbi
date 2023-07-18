@@ -52,12 +52,67 @@
               <td class="pr-4 pl-2 w-[10px]">{{ question.level }}</td>
               <td class="pr-4 pl-2 w-[10%] py-2">
                 <button @click="deleteQuestion(question._id)" class="text-gray-200 bg-red-900 w-20 h-10 rounded hover:bg-red-700 mr-2">Delete</button>
-                <button class="text-gray-200 bg-green-900 w-20 h-10 rounded hover:bg-green-700">Edit</button>
+                <button @click="editQuestion(question)" class="text-gray-200 bg-green-900 w-20 h-10 rounded hover:bg-green-700">Edit</button>
               </td>
             </tr>
           </tbody>
         </table>
       </div>
+
+      <!-- Modal content -->
+<div v-if="showEditModal" class="fixed z-50 inset-0 w-[60%] mt-20 overflow-y-auto justify-center items-center">
+  <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+    <!-- Edit question form -->
+    <h3 class="text-lg leading-6 font-medium text-gray-900">Edit Question</h3>
+    <div class="mt-4">
+      <textarea v-model="editedQuestion.question" rows="3" class="w-full px-3 py-2 text-gray-700 border border-gray-300 rounded-md focus:outline-none"></textarea>
+    </div>
+    <!-- Rest of the form inputs -->
+
+    <!-- Edit answers -->
+    <div class="mt-4">
+      <label for="editedAnswers" class="block text-sm font-medium text-gray-700">Answers</label>
+      <div class="mt-1">
+        <input v-for="(answer, index) in editedQuestion.answers" :key="index" v-model="editedQuestion.answers[index]" type="text" name="editedAnswers" id="editedAnswers" class="w-full px-3 py-2 text-gray-700 border border-gray-300 rounded-md focus:outline-none" />
+      </div>
+    </div>
+
+    <!-- Edit correct answer -->
+    <div class="mt-4">
+      <label for="editedCorrectAnswer" class="block text-sm font-medium text-gray-700">Correct Answer</label>
+      <div class="mt-1">
+        <input v-model="editedQuestion.correct_answer" type="text" name="editedCorrectAnswer" id="editedCorrectAnswer" class="w-full px-3 py-2 text-gray-700 border border-gray-300 rounded-md focus:outline-none" />
+      </div>
+    </div>
+
+    <!-- Edit category -->
+    <div class="mt-4">
+      <label for="editedCategory" class="block text-sm font-medium text-gray-700">Category</label>
+      <div class="mt-1">
+        <input v-model="editedQuestion.category" type="text" name="editedCategory" id="editedCategory" class="w-full px-3 py-2 text-gray-700 border border-gray-300 rounded-md focus:outline-none" />
+      </div>
+    </div>
+
+    <!-- Edit level -->
+    <div class="mt-4">
+      <label for="editedLevel" class="block text-sm font-medium text-gray-700">Level</label>
+      <div class="mt-1">
+        <input v-model="editedQuestion.level" type="text" name="editedLevel" id="editedLevel" class="w-full px-3 py-2 text-gray-700 border border-gray-300 rounded-md focus:outline-none" />
+      </div>
+    </div>
+
+    <!-- Save and Cancel buttons -->
+    <div class="mt-5 sm:mt-6 flex justify-center items-center">
+      <button @click="saveQuestion" type="button" class="inline-flex w-40 mr-5 justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:text-sm">
+        Save
+      </button>
+      <button @click="cancelEdit" type="button" class="mt-5 sm:mt-0  inline-flex justify-center w-40 rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:text-sm">
+        Cancel
+      </button>
+    </div>
+  </div>
+</div>
+
     </div>
   </template>
   
@@ -70,6 +125,8 @@
       return {
         questions: [], // Initialize the questions array
         filteredQuestions: [], // Initialize the filteredQuestions array
+        showEditModal: false, // Flag to control the edit modal visibility
+        editedQuestion: {}, // Object to hold the edited question data
       };
     },
     created() {
@@ -119,6 +176,42 @@
       return matchLevel && matchCategory;
     });
   },
+    
+  // Open the edit modal and assign the question data to the editedQuestion object
+  editQuestion(question) {
+      this.showEditModal = true;
+      this.editedQuestion = { ...question };
     },
+
+    // Save the edited question
+  saveQuestion() {
+    // Make a PATCH request using Axios
+    axios
+      .patch(`https://quizzes-bmo0.onrender.com/question/${this.editedQuestion._id}`, this.editedQuestion)
+      .then(response => {
+        console.log('Question updated successfully:', response.data);
+        // Find the index of the edited question in the questions array
+        const index = this.questions.findIndex(question => question._id === this.editedQuestion._id);
+        // Update the questions and filteredQuestions arrays with the edited question
+        this.questions.splice(index, 1, response.data);
+        this.filteredQuestions.splice(index, 1, response.data);
+        // Close the edit modal
+        this.showEditModal = false;
+        // Reset the editedQuestion object
+        this.editedQuestion = {};
+      })
+      .catch(error => {
+        console.error('Error updating question:', error);
+        // Handle the error
+      });
+  },
+    // Cancel the edit and close the edit modal
+    cancelEdit() {
+      this.showEditModal = false;
+      this.editedQuestion = {};
+    },
+
+  },
+
   };
   </script>

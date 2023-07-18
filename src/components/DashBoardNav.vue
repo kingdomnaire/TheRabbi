@@ -3,16 +3,12 @@
       <div class="vertical-nav bg-blue-950 text-gray-100 text-xl font-bold">
         WHO WANT'S TO BE A RABBI
 
-            <!-- Dropdown -->
+           
           <div class="relative mr-20 ">
-            <button @click="toggleDropdown" class="font-bold hover:text-gray-400">
-              Account
-              <i :class="isOpen ? 'fa fa-caret-up' : 'fa fa-caret-down'"></i>
-            </button>
-            <div v-if="isOpen" class="absolute bg-blue-950 text-gray-100 py-1.5 rounded-md shadow-lg font-light text-sm">
-              <p class="block px-4 py-2 hover:bg-gray-400 hover:text-blue-900 cursor-pointer">Change Password</p>
-              <p class="block px-4 py-2 hover:bg-gray-400 hover:text-blue-900 cursor-pointer" @click="logout">Logout</p>
-            </div>
+              <ol class="flex text-sm font-normal">
+                <li class="block px-4 py-2 hover:bg-gray-400 hover:text-blue-900 cursor-pointer">Change Password</li>
+              <li class="block px-4 py-2 hover:bg-gray-400 hover:text-blue-900 cursor-pointer" @click="logout">Logout</li>
+              </ol>
           </div>
       </div>
   
@@ -41,9 +37,6 @@
           };
         },
         methods: {
-          toggleDropdown() {
-            this.isOpen = !this.isOpen;
-          },
 
           logout() {
       // Remove the login data from localStorage

@@ -3,7 +3,7 @@
   px-28 bg-blue-600 md:w-[40%] flex-wrap flex flex-col justify-center items-center">
       <div class="w-screen h-full absolute z-30 bg-opacity-80 flex justify-center">
         <!-- Check if players array is empty -->
-        <div v-if="players.length === 0" class="">
+        <div v-if="players.length === 0" class=" w-72">
           <p class="text-gray-400 font-bold text-center">Data will show after the game</p>
           <p class="text-gray-400 font-bold text-center">Hello {{ login.firstName }}! the game is locked, you will be notified soon.</p>
         </div>
