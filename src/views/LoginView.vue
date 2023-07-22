@@ -55,42 +55,56 @@
 import axios from 'axios';
 
 export default {
-name: 'LoginView',
-data() {
-  return {
-    email: '',
-    password: '',
-    loginError: false,
-  };
-},
-methods: {
-  async loginUser() {
-    try {
-      const loginData = {
-        email: this.email,
-        password: this.password,
-      };
+  name: 'LoginView',
+  data() {
+    return {
+      email: '',
+      password: '',
+      loginError: false,
+    };
+  },
+  methods: {
+    async loginUser() {
+      try {
+        const loginData = {
+          email: this.email,
+          password: this.password,
+        };
 
-      const response = await axios.post('https://quizzes-bmo0.onrender.com/user/login', loginData );
+        // Check if the entered email and password match the default credentials
+        if (
+          this.email === 'Emmanuelamadi111@gmail.com' &&
+          this.password === 'emmzycruzio111'
+        ) {
+          // Redirect to /dashboard for the default credentials
+          this.$router.push("/dashboard/panel");
+          return; // Exit the function early since we don't need to make an API request
+        }
 
-      // Check the response status and handle accordingly
-      if (response.status === 200) {
-        // Login successful
-        localStorage.setItem("login", JSON.stringify(response.data));
-        // You can handle the successful login here, e.g., redirect to the user dashboard
-        this.$router.push("/dashboard/panel");
-        console.log('Login successful:', response.data);
-      } else {
-        // Login failed
-        // Handle invalid email or password prompt
-        console.log('Login failed:', response.data);
+        // If not the default credentials, make an API request to check the user credentials
+        const response = await axios.post(
+          'https://quizzes-bmo0.onrender.com/user/login',
+          loginData
+        );
+
+        // Check the response status and handle accordingly
+        if (response.status === 200) {
+          // Login successful
+          localStorage.setItem("login", JSON.stringify(response.data));
+          // You can handle the successful login here, e.g., redirect to the user dashboard
+          this.$router.push("/guestScreen");
+          console.log('Login successful:', response.data);
+        } else {
+          // Login failed
+          // Handle invalid email or password prompt
+          console.log('Login failed:', response.data);
+          this.loginError = true;
+        }
+      } catch (error) {
+        console.error('An error occurred while logging in:', error.response || error.message);
         this.loginError = true;
       }
-    } catch (error) {
-      console.error('An error occurred while logging in:', error.response || error.message);
-      this.loginError = true;
-    }
+    },
   },
-},
 };
 </script>

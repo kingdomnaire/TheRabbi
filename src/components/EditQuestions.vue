@@ -23,6 +23,9 @@
                 <option value="Wars">Wars</option>
                 <option value="Major Prophet">Major Prophet</option>
                 <option value="Parables">Parables</option>
+                <option value="Paul">Paul</option>
+                <option value="The Psalms">The Psalms</option>
+                <option value="Jesus time on earth">Jesus time on earth</option>
               </select>
 
               </div>

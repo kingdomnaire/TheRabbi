@@ -6,7 +6,7 @@
     <div>
       <GameRules class="mt-[3rem]"/>
       <HostChat/>
-      <div @click="generateQuestion"
+      <div @click="fetchQuestion"
       class="bg-green-800 w-40 text-lg font-bold text-gray-200 rounded mt-3 ml-32 text-center hover:bg-green-600 cursor-pointer">
        Generate Question</div>
       <div class="bg-green-800 w-40 text-lg font-bold text-gray-200 rounded mt-3 ml-32 text-center hover:bg-green-600 cursor-pointer">Revel Answer</div>
@@ -29,8 +29,8 @@
     name: "HostPageView",
     components: { GameRules, SelectUser, QuestionInput,
        HostChat },
-    methods: {
-  ...mapActions(['generateQuestion']),
-},
+       methods: {
+        ...mapActions(['fetchQuestion']), // Use fetchQuestion action instead of generateQuestion
+      },
   };
   </script>

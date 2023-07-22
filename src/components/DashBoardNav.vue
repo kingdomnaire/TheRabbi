@@ -44,6 +44,7 @@
       
         <p class="nav-title">Game</p>
       <router-link class="router h-10 font-bold items-center hover:bg-gray-400 hover:text-blue-900" to="/dashboard/fastest" >Fastest Finger</router-link>
+      <router-link class="router h-10 font-bold items-center hover:bg-gray-400 hover:text-blue-900" to="/hostScreen" >Host</router-link>
     </nav>
     <div class="content"><slot /></div>
      </div>

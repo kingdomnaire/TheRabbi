@@ -76,6 +76,7 @@ const routes = [
     redirect: '/dashboard/panel',
     meta: { requiresAuth: true },
   },
+  
 ];
 
 
