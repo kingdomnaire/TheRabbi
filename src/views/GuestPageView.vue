@@ -15,7 +15,7 @@
             <div 
             class="w-4/5 h-20 drop-shadow-2xl rounded-xl border-0 py-1.5 text-center item-center
             text-blue-800 shadow-sm ring-1 ring-inset ring-gray-300 bg-gray-200 max-md:text-sm sm:leading-6 
-            pointer-events-none max-sm:w-full"> Who killed Goliath of Gath?</div>
+            pointer-events-none max-sm:w-full">{{ question }}</div>
           </div>
         </div>
         <!--ans btn-->
@@ -26,7 +26,7 @@
               class="pl-5 w-4/5 h-20 ml-5 rounded-full border-0 py-1.5 hover:bg-blue-500 
               hover:text-gray-200 hover:ring-blue-800 text-blue-800 shadow-sm ring-1 ring-inset 
               ring-gray-300 bg-gray-200 sm:text-sm sm:leading-6 font-bold max-sm:h-16 max-sm:w-full max-sm:ml-0 
-              max-md:w-full max-md:ml-0 max-md:h-14">A: Samson </div>
+              max-md:w-full max-md:ml-0 max-md:h-14">A: {{ options[0] }}</div>
             </div>
           </div>
   
@@ -36,7 +36,7 @@
               class="pl-5 w-4/5 h-20 -ml-8 max-sm:ml-0 rounded-full border-0 py-1.5 text-blue-800 shadow-sm 
               hover:bg-blue-500 hover:text-gray-200 hover:ring-blue-800
               ring-1 ring-inset ring-gray-300 bg-gray-200 sm:text-sm sm:leading-6 font-bold
-              max-sm:h-16 max-sm:w-full max-md:w-full max-md:h-14 max-md:ml-0">B: David </div>
+              max-sm:h-16 max-sm:w-full max-md:w-full max-md:h-14 max-md:ml-0">B: {{ options[1] }}</div>
             </div>
           </div>
   
@@ -46,7 +46,7 @@
               class="pl-5 w-4/5 h-20 ml-5 rounded-full border-0 py-1.5 text-blue-800 shadow-sm ring-1
               hover:bg-blue-500 hover:text-gray-200 hover:ring-blue-800
               ring-inset ring-gray-300 bg-gray-200 sm:text-sm sm:leading-6  font-bold max-sm:h-16
-              max-sm:ml-0 max-sm:w-full max-md:w-full max-md:h-14 max-md:ml-0">C: Solomon</div>
+              max-sm:ml-0 max-sm:w-full max-md:w-full max-md:h-14 max-md:ml-0">C: {{ options[2] }}</div>
             </div>
           </div>
   
@@ -57,7 +57,7 @@
               hover:bg-blue-500 hover:text-gray-200 hover:ring-blue-800 
               ring-inset ring-gray-300 bg-gray-200 sm:text-sm sm:leading-6 font-bold max-sm:mb-10 
               max-sm:w-full max-sm:h-16 text-blue-800 max-md:w-full max-md:h-14 max-md:ml-0">
-              D:Saul
+              D: {{ options[3] }}
               </div>
             </div>
           </div>
@@ -78,22 +78,47 @@
     import CarouselImage from '@/components/CarouselImage.vue';
     import MoneyLevel from '@/components/MoneyLevel.vue';
     import PlayerName from '@/components/PlayerName.vue';
-    import { mapGetters, mapActions } from 'vuex';
-    
-    
+    import axios from 'axios';
+
+
     export default {
-      name: 'HostPageView',
-      components: { GameRules, PlayerMeter, LifeLine, CarouselImage, MoneyLevel, PlayerName },
-    
-      computed:{
-        ...mapGetters('price', ['getCurrentPrice', 'getPrices'])
-      },
-      methods: {
-        ...mapActions('price', ['moveUp', 'moveDown']),
-      },
+  name: 'HostPageView',
+  components: { GameRules, PlayerMeter, LifeLine, CarouselImage, MoneyLevel, PlayerName },
+
+  data() {
+    return {
+      question: null,
+      options: [],
     };
+  },
+
+  methods: {
+  fetchQuestion() {
+    axios
+      .get('https://quizzes-bmo0.onrender.com/question/game')
+      .then(response => {
+        console.log('API Response:', response.data);
+
+        // Access the question and answers from the nested object
+        const questionObj = response.data[0];
+        const { question } = questionObj;
+
+        // Set the component's data
+        this.question = question.question;
+        this.options = question.answers;
+      })
+      .catch(error => {
+        console.error('Error fetching question:', error);
+        // Handle the error
+      });
+  },
+},
+
+
+  created() {
+    this.fetchQuestion();
+  },
+};
+
     </script>
-    
-    <style>
-    
-    </style>
+   

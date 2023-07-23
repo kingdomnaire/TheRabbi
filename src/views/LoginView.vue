@@ -1,7 +1,7 @@
 <template>
   <div class="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 bg-blue-950 h-screen">
     <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-      <!--<img class="mx-auto h-10 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company" />-->
+      <img class="mx-auto h-10 w-auto" src="WHO WANTS TO BE A RABBI.png" alt="Rabbi" />
       <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-100">Sign in to your account</h2>
     </div>
 
@@ -71,15 +71,13 @@ export default {
           password: this.password,
         };
 
-        // Check if the entered email and password match the default credentials
-        if (
-          this.email === 'Emmanuelamadi111@gmail.com' &&
-          this.password === 'emmzycruzio111'
-        ) {
-          // Redirect to /dashboard for the default credentials
-          this.$router.push("/dashboard/panel");
-          return; // Exit the function early since we don't need to make an API request
-        }
+        // // Check if the entered email and password match the default credentials
+        // if (this.email === 'Emmanuelamadi111@gmail.com' && this.password === 'emmzycruzio111') {
+        //   alert('Login successful!'); // Replace this with a custom modal or toast notification library if desireds
+        //   // Redirect to /dashboard for the default credentials
+        //   this.$router.push("/guestScreen");
+        //   return; // Exit the function early since we don't need to make an API request
+        // }
 
         // If not the default credentials, make an API request to check the user credentials
         const response = await axios.post(

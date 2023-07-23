@@ -136,6 +136,7 @@ async registerUser() {
     
     // Handle the response as needed
     console.log(response.data);
+    
   } catch (error) {
     // Handle any errors
     console.error("An error occurred while registering the user:", error);

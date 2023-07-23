@@ -5,6 +5,7 @@ import App from '../App.vue'
 import price from './price'
 import components from './components';
 import question from './question';
+import answer from './answer';
 
 // Create a new store instance.
 export default createStore({
@@ -12,6 +13,7 @@ export default createStore({
     price,
     components,
     question,
+    answer
   }
 })
 

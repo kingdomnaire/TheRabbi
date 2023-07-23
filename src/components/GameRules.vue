@@ -16,14 +16,14 @@
               2: When a player get 2 questions wrong, the game will be over for the user.
             </li>
             <li>
-              3: When a player gets 2 wrong before crossing level 6, the player drop and starts from level 1.
+              3: When a player gets 1 wrong answer before crossing level 6, the player drop and starts from level 1.
             </li>
             <li>
               4: When a player gets another question wrong before crossing level 6, the game ends for the player,
               and the player goes away with ₦ 5,000. 
             </li>
             <li>
-              5: When a player gets a answers wrong after crossing level 6 and before crossing level 11,
+              5: When a player gets an answer wrong after crossing level 6 and before crossing level 11,
               the player will drop and start from level 6.
             </li>
             <li>
@@ -38,7 +38,7 @@
               8: Ever player get to be at the same question category at every time, regardless of the current game level.
             </li>
             <li>
-              9: Only 4 players will be allowed to make it pass this level, 1st, 2nd and 3rd.
+              9: when 4 players gets to level 11 the game becomes over for the remaining players.
             </li>
             <li>
               10: When a player gets to level 15 of 200,000 the game ends for everyone.
