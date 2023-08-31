@@ -1,20 +1,20 @@
 // components.js
 
 export default {
-    state: {
-      activeComponent: null
+  state: {
+    activeComponent: localStorage.getItem('Player') || null,
+  },
+  mutations: {
+    setActiveComponent(state, component) {
+      state.activeComponent = component;
+      localStorage.setItem('Player', component); // Save the active component in localStorage
     },
-    mutations: {
-      setActiveComponent(state, component) {
-        state.activeComponent = component;
+  },
+  actions: {
+    setActiveComponent({ commit, state }, component) {
+      if (state.activeComponent !== component) {
+        commit('setActiveComponent', component);
       }
     },
-    actions: {
-      setActiveComponent({ commit, state }, component) {
-        if (state.activeComponent !== component) {
-          commit('setActiveComponent', component);
-        }
-      }
-    }
-  };
-  
+  },
+};

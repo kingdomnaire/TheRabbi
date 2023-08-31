@@ -1,12 +1,12 @@
 <template>
-    <div class="container h-[80vh] drop-shadow-md rounded-md pt-14 px-8  md:w-[160vh] flex-wrap flex flex-col">
+    <div class="container h-[80vh] drop-shadow-md rounded-md pt-14 px-8  md:w-[160vh] flex-wrap flex flex-col mt-2">
         <div class="text-blue-950 -mt-10">
           <h3 class="font-bold text-lg ">Filter the questions here.</h3>
           <div class="flex gap-4">
                 <div>
                   <label for="level" class="mr-2">Filter by level:</label>
 
-                  <select name="level" id="level" class="bg-blue-600 text-gray-200 rounded" @change="filterQuestions">
+                  <select name="level" id="level" class="bg-gray-500 text-gray-200 rounded" @change="filterQuestions">
                     <option value="">All Levels</option>
                     <option value="Easy">Easy</option>
                     <option value="Hard">Hard</option>
@@ -17,7 +17,7 @@
               <div>
                 <label class="mr-2" for="category">Filter by category:</label>
 
-              <select name="category" id="category" class="bg-blue-600 text-gray-200 rounded"  @change="filterQuestions">
+              <select name="category" id="category" class="bg-gray-500 text-gray-200 rounded"  @change="filterQuestions">
                 <option value="">All Categories</option> 
                 <option value="Minor Prophet">Minor Prophet</option>
                 <option value="Wars">Wars</option>
@@ -33,9 +33,9 @@
         </div>
 
 
-      <div class="absolute mt-10 z-30 bg-opacity-80 flex w-[150vh] overflow-y-auto max-h-[80vh]">
-        <table class="w-[150vh] overflow-y-auto max-h-[30vh]">
-          <thead class="w-[90%] bg-blue-600">
+      <div class="absolute mt-10 z-30 bg-opacity-80 flex w-[160vh] overflow-y-auto max-h-[100vh]">
+        <table class="w-[180vh] overflow-y-auto max-h-[40vh]">
+          <thead class="w-[100%] bg-gray-700">
             <tr class=" h-10 w-[90%] text-gray-300">
               <th>S/N</th>
               <th>Questions</th>
@@ -43,10 +43,11 @@
               <th>Correct Answer</th>
               <th>Category</th>
               <th>Level</th>
+              <th class="w-20"></th>
             </tr>
           </thead>
           <tbody class="w-[90%]">
-            <tr v-for="(question, index) in filteredQuestions" :key="question._id" class="bg-blue-900 h-10 text-gray-200 font-bold border w-[150vh]">
+            <tr v-for="(question, index) in filteredQuestions" :key="question._id" :class="index % 2 === 0 ? 'bg-gray-500' : 'bg-gray-700' + 'h-10 text-gray-700 font-bold border w-[150vh]'">
               <td class="pr-10 pl-4 w-[2%]">{{ index + 1 }}</td>
               <td class="pr-10 pl-4 w-[30%]">{{ question.question }}</td>
               <td class="pr-4 pl-2 w-[30px]">{{ formatAnswers(question.answers) }}</td>
@@ -135,6 +136,15 @@
     created() {
       this.fetchQuestions(); // Fetch questions when the component is created
     },
+
+    computed: {
+  backgroundClass() {
+    return (index) => {
+      return index % 2 === 0 ? 'bg-gray-300' : 'bg-gray-500';
+    };
+  },
+},
+
     methods: {
       fetchQuestions() {
         axios
@@ -218,3 +228,4 @@
 
   };
   </script>
+  

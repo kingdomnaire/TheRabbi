@@ -1,6 +1,6 @@
 <template>
-    <div class="">
-      <div class="vertical-nav bg-blue-950 text-gray-100 text-xl font-bold">
+    <div class="w-[100%] h-[100%]">
+      <div class="vertical-nav bg-gray-500 text-gray-100 text-xl font-bold">
         WHO WANT'S TO BE A RABBI
 
            
@@ -34,8 +34,8 @@
         </div>
       </div>
   
-     <div class="settings-nav text-gray-100 h-[94vh]">
-      <nav class=" bg-blue-800 -ml-2 px-5 h-[94vh] ">
+     <div class="settings-nav text-gray-100 h-[100vh]">
+      <nav class=" bg-gray-700 -ml-2 px-5 ">
         <p class="nav-title">DashBoard</p>
       <router-link class="router h-10 font-bold items-center hover:bg-gray-400 hover:text-blue-900" to="/dashboard/panel" >Control Panel</router-link>
       <router-link class="router h-10 font-bold items-center hover:bg-gray-400 hover:text-blue-900" to="/dashboard/question" >Add Question</router-link>
@@ -105,6 +105,8 @@
     align-items: center;
     height: 25%;
     top: 0;
+    width: 100%;
+    float: right;
   
   }
   .router-link-active {
@@ -117,13 +119,11 @@
   
   .settings-nav{
     display: grid;
-    position: relative;
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 195px 1fr;
     gap: 10px;
     padding: 0 5px;
-    height: 100%;
+    
   }
-  
   
   .nav-title{
     font-size: 20px;

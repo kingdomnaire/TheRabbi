@@ -7,7 +7,7 @@
       <PlayerName class="z-60"/>
       <MoneyLevel/>
 
-      <div class="mt-[4.5rem] mb-5 w-3/5 float-right max-sm:float-none max-sm:ml-0 max-sm:mt-4 max-sm:w-full max-sm:bg-blue-950
+      <div class="-mt-[5vh] mb-5 w-3/5 float-right max-sm:float-none max-sm:ml-0 max-sm:mt-4 max-sm:w-full max-sm:bg-blue-950
       max-md:float-none max-md:mt-14 max-md:ml-8 ">
       <!--question box-->
         <div class="col-span-full mb-4 ml-10 w-full max-sm:w-5/6 max-md:w-full max-md:ml-0 max-sm:ml-9">
@@ -19,44 +19,47 @@
           </div>
         </div>
         <!--ans btn-->
-        <div class="mt-3 grid grid-cols-6 gap-y-2 max-md:grid-cols-1 sm:ml-2 max-sm:mx-4 ">
+        <div class="mt-3 grid grid-cols-6 gap-y-2 max-md:grid-cols-1 sm:ml-2 max-sm:mx-4  ">
           <div class="sm:col-span-3">
-            <div class="mt-1">
-              <div
-              class="pl-5 w-4/5 h-20 ml-5 rounded-full border-0 py-1.5 hover:bg-blue-500 
-              hover:text-gray-200 hover:ring-blue-800 text-blue-800 shadow-sm ring-1 ring-inset 
-              ring-gray-300 bg-gray-200 sm:text-sm sm:leading-6 font-bold max-sm:h-16 max-sm:w-full max-sm:ml-0 
-              max-md:w-full max-md:ml-0 max-md:h-14">A: {{ options[0] }}</div>
-            </div>
-          </div>
+        <div class="mt-1">
+          <div
+            class="pl-3 w-4/5 h-[4rem] ml-5 rounded-full border-0 py-1.5 hover:bg-blue-500 
+            hover:text-gray-200 hover:ring-blue-800 text-blue-800 shadow-sm ring-1 ring-inset 
+            ring-gray-300 bg-gray-200 sm:text-sm sm:leading-6 font-bold max-sm:h-16 max-sm:w-full max-sm:ml-0 
+            max-md:w-full max-md:ml-0 max-md:h-14">A: {{ options[0] }} </div>
+        </div>
+      </div>
   
           <div class="sm:col-span-3">
             <div class="mt-1">
               <div
-              class="pl-5 w-4/5 h-20 -ml-8 max-sm:ml-0 rounded-full border-0 py-1.5 text-blue-800 shadow-sm 
+              class="pl-3 w-4/5 h-[4rem] -ml-5 max-sm:ml-0 rounded-full border-0 py-1.5 text-blue-800 shadow-sm 
               hover:bg-blue-500 hover:text-gray-200 hover:ring-blue-800
               ring-1 ring-inset ring-gray-300 bg-gray-200 sm:text-sm sm:leading-6 font-bold
-              max-sm:h-16 max-sm:w-full max-md:w-full max-md:h-14 max-md:ml-0">B: {{ options[1] }}</div>
+              max-sm:h-16 max-sm:w-full max-md:w-full max-md:h-14 max-md:ml-0"
+              style="word-wrap: break-word;">B: {{ options[1] }}</div>
             </div>
           </div>
   
           <div class="sm:col-span-3 ">
             <div class="mt-1">
               <div
-              class="pl-5 w-4/5 h-20 ml-5 rounded-full border-0 py-1.5 text-blue-800 shadow-sm ring-1
+              class="pl-3 w-4/5 h-[4rem] ml-5 rounded-full border-0 py-1.5 text-blue-800 shadow-sm ring-1
               hover:bg-blue-500 hover:text-gray-200 hover:ring-blue-800
               ring-inset ring-gray-300 bg-gray-200 sm:text-sm sm:leading-6  font-bold max-sm:h-16
-              max-sm:ml-0 max-sm:w-full max-md:w-full max-md:h-14 max-md:ml-0">C: {{ options[2] }}</div>
+              max-sm:ml-0 max-sm:w-full max-md:w-full max-md:h-14 max-md:ml-0"
+              style="word-wrap: break-word;">C: {{ options[2] }}</div>
             </div>
           </div>
   
           <div class="sm:col-span-3">
             <div class="mt-1">
               <div
-              class="pl-5 w-4/5 h-20 -ml-8 max-sm:ml-0 rounded-full border-0 py-1.5 shadow-sm ring-1
+              class="pl-3 w-4/5 h-[4rem] -ml-5 max-sm:ml-0 rounded-full border-0 py-1.5 shadow-sm ring-1
               hover:bg-blue-500 hover:text-gray-200 hover:ring-blue-800 
               ring-inset ring-gray-300 bg-gray-200 sm:text-sm sm:leading-6 font-bold max-sm:mb-10 
-              max-sm:w-full max-sm:h-16 text-blue-800 max-md:w-full max-md:h-14 max-md:ml-0">
+              max-sm:w-full max-sm:h-16 text-blue-800 max-md:w-full max-md:h-14 max-md:ml-0"
+              style="word-wrap: break-word;">
               D: {{ options[3] }}
               </div>
             </div>
@@ -71,7 +74,7 @@
   </div>
   </template>
     
-    <script>
+<script>
     import GameRules from '@/components/GameRules.vue';
     import PlayerMeter from '@/components/PlayerMeter.vue';
     import LifeLine from '@/components/panel/LifeLine.vue';
@@ -89,6 +92,7 @@
     return {
       question: null,
       options: [],
+      correctAnswer: null,
     };
   },
 
@@ -106,6 +110,10 @@
         // Set the component's data
         this.question = question.question;
         this.options = question.answers;
+        this.correctAnswer = question.correct_answer;
+
+        console.log(this.correctAnswer);
+
       })
       .catch(error => {
         console.error('Error fetching question:', error);
@@ -120,5 +128,4 @@
   },
 };
 
-    </script>
-   
+</script>

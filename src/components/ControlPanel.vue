@@ -1,7 +1,7 @@
 <template>
-  <div class="container h-[90%] drop-shadow-md rounded-md mt-3 pt-5
-  px-8 bg-blue-600 md:w-[90%] justify-center max-md:h-[100%]">
-    <FirstButton/>
+  <div class="container h-[90%] drop-shadow-md mt-3 pt-5
+  px-8 bg-gray-300 md:w-[90%] justify-center max-md:h-[100%]">
+    <!--<FirstButton/>-->
     <QuestionBox class="w-2/4"/>
     <QuestionCategory class="ml-[52%]"/>
      <div class="ml-[74%] ">
@@ -21,7 +21,7 @@
 <script>
 import SoundBtn from './panel/SoundBtn.vue';
 import ControlBtn from './panel/ControlBtn.vue';
-import FirstButton from './panel/FirstButton.vue';
+//import FirstButton from './panel/FirstButton.vue';
 //import GameMeter from './panel/GameMeter.vue';
 //import LifeLine from './panel/LifeLine.vue';
 import QuestionBox from './panel/QuestionBox.vue';
@@ -31,7 +31,7 @@ import QuestionTag from './panel/QuestionTag.vue';
 
 export default{
     components: {
-    FirstButton,
+   // FirstButton,
     QuestionBox,
     SoundBtn,
     ControlBtn,

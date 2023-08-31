@@ -1,20 +1,22 @@
 <template>
-    <div class="flex gap-5 text-gray-100 mb-1">
+    <div class="flex gap-5 text-gray-100 mb-1 h-[20%]">
 
-        <div class="bg-blue-900 hover:bg-blue-600 text-gray-100 w-[10%] h-[15%] rounded py-1 cursor-pointer ">Player 1</div>
-        <div class="bg-blue-900 rounded px-1 w-24 h-10 py-1">
+        <div
+        :class="['bg-blue-900 hover:bg-blue-600 text-gray-100 w-[10%] h-[15%] rounded py-1 cursor-pointer',{ 'bg-gray-400 text-red-600': isDeactivated }]"
+        @click="handleClick">Player 1</div>
+        <div :class="['bg-blue-900 rounded px-1 w-24 h-[15%] py-1', { 'bg-gray-400 text-red-600': isDeactivated }]">
             Question {{ question }}
         </div>
-        <div class="bg-blue-900 rounded px-1 h-10 w-[4.5rem] ">
+        <div :class="['bg-blue-900 rounded px-1 py-1 h-[15%] w-[4.5rem]', { 'bg-gray-400 text-red-600': isDeactivated }] ">
             Level {{ level }}
         </div>
-        <div class="bg-blue-900 rounded px-1 h-10 w-[9rem]">
+        <div :class="['bg-blue-900 rounded px-1 py-1 h-[15%] w-[9rem]',{ 'bg-gray-400 text-red-600': isDeactivated }]">
             Wrong number {{ wrong }}
         </div>
-        <PhoneIcon class=" text-blue-900" />
-        <AskAudienceIcon class=" text-blue-900" />
-        <div class="font-bold text-xl flex items-center text-blue-900" >50:50</div>
-        
+        <PhoneIcon :class="['-ml-5 text-blue-900 h-[4vh]', { ' text-red-600': isDeactivated }]" />
+        <AskAudienceIcon :class="['-ml-5 text-blue-900 h-[4vh]', { 'text-red-600': isDeactivated }]" />
+        <div :class="['-ml-5 font-bold text-xl text-center align-middle text-blue-900', { 'text-red-600': isDeactivated }]" >50:50</div>
+        <div :class="['bg-blue-900 rounded px-1 w-24 h-[15%] py-1 cursor-pointer', { 'bg-gray-400 text-red-600': isDeactivated }]" @click="handleDeactivate">Deactivate</div>
     </div>
 </template>
 
@@ -22,26 +24,38 @@
 import PhoneIcon from '../icon/PhoneIcon.vue';
 import AskAudienceIcon from '../icon/AskAudienceIcon.vue';
 import { mapActions } from 'vuex';
-export default{
-    name: "PlayerOne",
-    data() {
-        return {
-            question: 1,
-            level: 15,
-            wrong: 0,
-        };
-    },
-    computed: {
+
+export default {
+  name: "PlayerOne",
+  data() {
+    return {
+      question: 1,
+      level: 15,
+      wrong: 0,
+      isDeactivated: false,
+    };
+  },
+  computed: {
     isActiveComponent() {
-      return this.$store.state.components.activeComponent === 'PlayerOne';
-    }
+      return (component) => this.$store.state.activeComponent === component;
+    },
   },
   methods: {
     ...mapActions('components', ['setActiveComponent']),
-    handleClick() {
-      this.setActiveComponent('PlayerOne');
+    handleDeactivate() {
+      this.isDeactivated = !this.isDeactivated;
+      const componentName = this.$options.name;
+      localStorage.setItem('Player', componentName);
+      localStorage.setItem('Deactivated', this.isDeactivated); // Save the deactivated state in localStorage
+      this.setActiveComponent(componentName);
+    },
+  },
+  created() {
+    const storedButton = localStorage.getItem('Player');
+    if (storedButton) {
+      this.isDeactivated = localStorage.getItem('Deactivated') === 'true'; // Load the deactivated state from localStorage
     }
   },
-    components: { PhoneIcon, AskAudienceIcon }
-}
+  components: { PhoneIcon, AskAudienceIcon },
+};
 </script>

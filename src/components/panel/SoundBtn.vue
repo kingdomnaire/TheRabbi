@@ -1,6 +1,6 @@
 <template>
     <div class="w-[90%] -ml-[25%] mt-5 mb-5">
-      <p class="text-gray-100 ml-8 text-center font-bold">Game Sound</p>
+      <p class="text-gray-800 ml-8 text-center font-bold">Game Sound</p>
       <div class=" mt-1 w-full ml-4 pb-1 h-3/4 grid grid-cols-1 gap-20 sm:grid-cols-6">
         <div class="grid w-15 col-span-2 sm:col-span-1 ">
           <button

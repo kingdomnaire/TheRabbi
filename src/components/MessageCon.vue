@@ -1,13 +1,15 @@
 <template>
-    <div class="container h-[90vh] drop-shadow-md rounded-md mt-8 mr-20 pt-14 px-8 bg-blue-600 md:w-[40%] flex-wrap flex flex-col justify-center items-center">
+    <div class="container h-[80vh] drop-shadow-md rounded-md mt-2 mr-20 pt-14 px-8 bg-gray-50 md:w-[40%] flex-wrap flex flex-col justify-center items-center"
+    style="margin: 0 auto;">
   
-      <div class="-mt-4 fixed">
-        <h3 class="text-center text-xl font-bold my-4">Chat Here</h3>
-        <div class="w-50">
-          <div class="h-[60vh] bg-indigo-700 rounded-lg bg-opacity-10 overflow-y-auto font-bold pb-5" :class="{ 'overflow-y-scroll': messages.length > 4 }">
+      <div class="-mt-10 fixed">
+        <h3 class="text-center text-xl font-bold my-4 text-gray-800">Chat Here</h3>
+        <div class="w-80">
+          <div class="h-[60vh] drop-shadow-md  bg-[url('../assets/chat.jpg')] rounded-lg bg-center overflow-y-auto font-bold pb-5" :class="{ 'overflow-y-scroll': messages.length > 4 }"
+            style="opacity: 0.3;">
           <div class="items-center justify-center float-right px-10">
             <!-- Display messages here -->
-            <div v-for="(message, index) in messages" :key="index" class="mb-2 items-center justify-center w-52 bg-blue-300 rounded p-2">
+            <div v-for="(message, index) in messages" :key="index" :class="index % 2 === 0 ? 'bg-gray-600' : 'bg-gray-700'+'mb-2 items-center text-gray-100 justify-center w-52 rounded p-2 pl-3'">
               {{ message }}
               <span @click="removeMessage(index)" class="text-red-500 cursor-pointer w-full ml-2 hover:bg-gray-400 px-1 rounded-full">
                 X

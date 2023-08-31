@@ -4,6 +4,7 @@ export default {
   state: {
     question: null,
     options: [],
+    correct_answer: null, // Update property name to match the API response
   },
   mutations: {
     setQuestion(state, question) {
@@ -12,22 +13,28 @@ export default {
     setOptions(state, options) {
       state.options = options;
     },
+    setCorrectAnswer(state, correctAnswer) {
+      state.correct_answer = correctAnswer; // Update property name to match the API response
+    },
   },
   actions: {
     fetchQuestion({ commit }) {
       axios
-        .post('https://quizzes-bmo0.onrender.com/question/generate',{level: "Hard"}) // Use the correct API route for fetching a question
+        .post('https://quizzes-bmo0.onrender.com/question/generate', { level: "Hard" })
         .then(response => {
-          const { question, answers } = response.data;
+          const { question, answers, correct_answer } = response.data;
           commit('setQuestion', question);
           commit('setOptions', answers);
+          commit('setCorrectAnswer', correct_answer);
           console.log(response);
           console.log(response.data);
 
+          // Save question and correct_answer in localStorage
+          localStorage.setItem('question', question);
+          localStorage.setItem('correctAnswer', correct_answer);
         })
         .catch(error => {
           console.error('Error fetching question:', error);
-          // Handle the error
         });
     },
   },
@@ -37,6 +44,9 @@ export default {
     },
     options(state) {
       return state.options;
+    },
+    correctAnswer(state) {
+      return state.correct_answer; // Update getter to use correct_answer
     },
   },
 };
