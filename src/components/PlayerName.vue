@@ -1,5 +1,5 @@
 <template>
-    <div class="text-sm font-bold text-gray-200 w-72 text-center ml-[80%] -mt-10">
+    <div class="text-sm font-bold text-gray-800 w-72 text-center ml-[80%] -mt-10">
         Player name: {{ login.firstName }} {{ login.lastName }}
       </div>
 </template>

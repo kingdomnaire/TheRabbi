@@ -27,7 +27,7 @@
       </div>
     </div>
   
-    <div class="labels text-gray-100 font-bold text-lg">
+    <div class="labels text-gray-800 font-bold text-lg">
         <label for="slide1" class="label">RCCG Beautiful Gate Parish</label>
         <label for="slide2" class="label">Mozfin Micro Finance Bank</label>
         <label for="slide3" class="label">Worldsech</label>

@@ -1,6 +1,6 @@
 <template>
     <DashBoardNav>
-      <div class="">
+      <div class="mt-14">
         <MessageCon/>
     </div>
     </DashBoardNav>

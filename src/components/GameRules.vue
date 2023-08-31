@@ -1,6 +1,6 @@
 <template>
   <div class="mt-[9rem]">
-    <div class="bg-gray-100 hover:bg-gray-300 text-blue-950 cursor-pointer text-bold w-24 ml-40 text-center rounded" @click="toggleGameRule"> Game Rule</div>
+    <div class="bg-gray-300 hover:bg-gray-300 text-blue-950 cursor-pointer text-bold w-24 ml-40 text-center rounded" @click="toggleGameRule"> Game Rule</div>
 
     <transition name="fade">
       <div v-if="showGameRule" class="modal-overlay">

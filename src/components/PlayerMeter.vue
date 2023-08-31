@@ -1,8 +1,8 @@
 <template>
     <div class="h-[30%] ml-10 mt-40 flex justify-center items-center">
-        <div class="bg-gray-200 h-full w-full rounded-lg shadow-xl">
+        <div class="bg-gray-300 h-full w-full rounded-lg shadow-xl">
             <div class="mt-2">
-                <div class="text-center font-bold text-blue-950">Player Game Meter</div>
+                <div class="text-center font-bold text-gray-800">Player Game Meter</div>
                 <!--Game meter-->
                 <div class="grid  grid-cols-2 text-center gap-2 mt-2 mx-2  ">
                     <div class="bg-blue-900 text-gray-100 w-32 rounded-lg py-2">

@@ -5,31 +5,31 @@
     <div class="col-span-full mb-4 ml-10 w-full max-sm:w-5/6 max-md:w-full max-md:ml-0 max-sm:ml-9">
       <div class="mt-1 h-2/4">
         <div 
-          class="w-4/5 h-[4rem] drop-shadow-2xl rounded-xl border-0 py-1.5 text-center item-center
-        text-blue-800 shadow-sm ring-1 ring-inset ring-gray-300 bg-gray-200 max-md:text-sm sm:leading-6 
+          class="w-4/5 h-[4rem] drop-shadow-md rounded-xl border-0 py-1.5 text-center item-center
+        text-gray-200 shadow-sm ring-1 ring-inset ring-gray-300 bg-blue-700 max-md:text-sm sm:leading-6 
         pointer-events-none max-sm:w-full" v-if="question">{{ question }}</div>
       </div>
     </div>
 
 <div class="float-right sm:col-span-3">
   <div class="mt-1">
-  <div class="text-gray-300 text-center font-bold">Correct Answer</div>
+  <div class="text-gray-800 text-center font-bold">Correct Answer</div>
     <div 
       class="pl-3 w-[40vh] h-[4rem] -ml-8 max-sm:ml-0 rounded-full border-0 py-1.5 shadow-sm ring-1
-      hover:bg-blue-500 hover:text-gray-200 hover:ring-blue-800 
-      ring-inset ring-gray-300 bg-gray-200 sm:text-sm sm:leading-6 font-bold max-sm:mb-10 
-      max-sm:w-full max-sm:h-16 text-blue-800 max-md:w-full max-md:h-14 max-md:ml-0">
+       hover:text-gray-200 hover:ring-blue-800 drop-shadow-md
+      ring-inset ring-gray-300 bg-blue-700 sm:text-sm sm:leading-6 font-bold max-sm:mb-10 
+      max-sm:w-full max-sm:h-16 text-gray-200 max-md:w-full max-md:h-14 max-md:ml-0">
       {{ correct_answer }}
     </div>
   </div>
 
   <div class="mt-1">
-  <div class="text-gray-300 text-center font-bold">Selected Answer</div>
+  <div class="text-gray-800 text-center font-bold">Selected Answer</div>
     <div 
       class="pl-3 w-[40vh] h-[4rem] -ml-8 max-sm:ml-0 rounded-full border-0 py-1.5 shadow-sm ring-1
-      hover:bg-blue-500 hover:text-gray-200 hover:ring-blue-800 
-      ring-inset ring-gray-300 bg-gray-200 sm:text-sm sm:leading-6 font-bold max-sm:mb-10 
-      max-sm:w-full max-sm:h-16 text-blue-800 max-md:w-full max-md:h-14 max-md:ml-0">
+     hover:text-gray-200 hover:ring-blue-800  drop-shadow-md
+      ring-inset ring-gray-300 bg-blue-700 sm:text-sm sm:leading-6 font-bold max-sm:mb-10 
+      max-sm:w-full max-sm:h-16 text-gray-200 max-md:w-full max-md:h-14 max-md:ml-0">
       {{ correct_answer }}
     </div>
   </div>
@@ -39,9 +39,9 @@
       <div class="sm:col-span-3">
         <div class="mt-1">
           <div
-            class="pl-3 w-4/5 h-[4rem] ml-5 rounded-full border-0 py-1.5 hover:bg-blue-500 
-            hover:text-gray-200 hover:ring-blue-800 text-blue-800 shadow-sm ring-1 ring-inset 
-            ring-gray-300 bg-gray-200 sm:text-sm sm:leading-6 font-bold max-sm:h-16 max-sm:w-full max-sm:ml-0 
+            class="pl-3 w-4/5 h-[4rem] ml-5 rounded-full border-0 py-1.5 drop-shadow-md
+             hover:ring-blue-800 text-gray-200 shadow-sm ring-1 ring-inset 
+            ring-gray-300 bg-blue-700 sm:text-sm sm:leading-6 font-bold max-sm:h-16 max-sm:w-full max-sm:ml-0 
             max-md:w-full max-md:ml-0 max-md:h-14">A: {{ options[0] }} </div>
         </div>
       </div>
@@ -49,9 +49,8 @@
       <div class="sm:col-span-3">
         <div class="mt-1">
           <div
-            class="pl-3 w-4/5 h-[4rem] -ml-8 max-sm:ml-0 rounded-full border-0 py-1.5 text-blue-800 shadow-sm 
-            hover:bg-blue-500 hover:text-gray-200 hover:ring-blue-800
-            ring-1 ring-inset ring-gray-300 bg-gray-200 sm:text-sm sm:leading-6 font-bold
+            class="pl-3 w-4/5 h-[4rem] -ml-8 max-sm:ml-0 rounded-full border-0 py-1.5 text-gray-200 drop-shadow-md  hover:ring-blue-800
+            ring-1 ring-inset ring-gray-300 bg-blue-700 sm:text-sm sm:leading-6 font-bold
             max-sm:h-16 max-sm:w-full max-md:w-full max-md:h-14 max-md:ml-0">B: {{ options[1] }} </div>
         </div>
       </div>
@@ -59,9 +58,8 @@
       <div class="sm:col-span-3 ">
         <div class="mt-1">
           <div
-            class="pl-3 w-4/5 h-[4rem] ml-5 rounded-full border-0 py-1.5 text-blue-800 shadow-sm ring-1
-            hover:bg-blue-500 hover:text-gray-200 hover:ring-blue-800 
-            ring-inset ring-gray-300 bg-gray-200 sm:text-sm sm:leading-6  font-bold max-sm:h-16
+            class="pl-3 w-4/5 h-[4rem] ml-5 rounded-full border-0 py-1.5 text-gray-200 drop-shadow-md ring-1 
+            ring-inset ring-gray-300 bg-blue-700 sm:text-sm sm:leading-6  font-bold max-sm:h-16
             max-sm:ml-0 max-sm:w-full max-md:w-full max-md:h-14 max-md:ml-0">C: {{ options[2] }} </div>
         </div>
       </div>
@@ -69,10 +67,9 @@
       <div class="sm:col-span-3">
         <div  class="mt-1">
           <div 
-            class="pl-3 w-4/5 h-[4rem] -ml-8 max-sm:ml-0 rounded-full border-0 py-1.5 shadow-sm ring-1
-            hover:bg-blue-500 hover:text-gray-200 hover:ring-blue-800 
-            ring-inset ring-gray-300 bg-gray-200 sm:text-sm sm:leading-6 font-bold max-sm:mb-10 
-            max-sm:w-full max-sm:h-16 text-blue-800 max-md:w-full max-md:h-14 max-md:ml-0">
+            class="pl-3 w-4/5 h-[4rem] -ml-8 max-sm:ml-0 rounded-full border-0 py-1.5 drop-shadow-md ring-1 hover:ring-blue-800 
+            ring-inset ring-gray-300 bg-blue-700 sm:text-sm sm:leading-6 font-bold max-sm:mb-10 
+            max-sm:w-full max-sm:h-16 text-gray-200 max-md:w-full max-md:h-14 max-md:ml-0">
             D: {{ options[3] }}
           </div>
         </div>

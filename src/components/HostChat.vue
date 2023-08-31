@@ -1,6 +1,6 @@
 <template>
     <div class="mt-10 ">
-      <div class="bg-gray-100 hover:bg-gray-300 text-blue-950 cursor-pointer text-bold 
+      <div class="bg-gray-300 hover:bg-gray-300 text-blue-950 cursor-pointer text-bold 
       w-24 ml-40 text-center rounded" @click="toggleGameRule">Messages</div>
   
       <transition name="fade">
@@ -8,10 +8,11 @@
           <div class="modal-content justify-center items-center" >
             <h3 class="text-center text-xl font-bold my-4">Chat Here</h3>
             <div class="w-50">
-              <div class="h-96 bg-indigo-700 rounded-lg bg-opacity-20 overflow-y-auto font-bold pb-5" :class="{ 'overflow-y-scroll': messages.length > 4 }">
-              <div class="items-center justify-center float-right px-10">
+              <div class="h-96 bg-indigo-700 bg-[url('../assets/chat.jpg')] rounded-lg bg-opacity-20 overflow-y-auto font-bold pb-5" :class="{ 'overflow-y-scroll': messages.length > 4 }"
+                style="opacity: 0.3;">
+              <div class="items-center justify-center float-right px-10 ">
                   <!-- Display messages here -->
-                <div v-for="(message, index) in messages" :key="index" class="mb-2 items-center justify-center bg-blue-300 p-2 rounded">
+                <div v-for="(message, index) in messages" :key="index" :class="index % 2 === 0 ? 'bg-gray-700 text-gray-200' : 'bg-gray-300 text-gray-200'+'mb-2 items-center justify-center p-2 rounded'">
                     {{ message }}
                     <span @click="removeMessage(index)" class="text-red-500 cursor-pointer ml-2 hover:bg-gray-400 px-1 rounded-full">
                       X

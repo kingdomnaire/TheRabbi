@@ -1,7 +1,7 @@
 <template>
-  <body class="bg-blue-950 h-screen">
+  <body class="h-screen">
     <div>
-      <div class="text-gray-100 ml-3 font-bold text-xl text-center">Host panel</div>
+      <div class="text-gray-800 ml-3 font-bold text-xl text-center">Host panel</div>
 
       <div>
         <GameRules class="mt-[3rem]" />
