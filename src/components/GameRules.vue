@@ -4,9 +4,9 @@
 
     <transition name="fade">
       <div v-if="showGameRule" class="modal-overlay">
-        <div class="modal-content">
+        <div class="modal-content h-[95%]">
           <h3 class="text-center text-xl font-bold my-4">Game Rules</h3>
-          <div class="h-1/2 overflow-y-auto font-bold pb-5">
+          <div class="h-[80%] overflow-y-auto font-bold pb-5">
             <ol>
               <!-- Rules content -->
               <li>
