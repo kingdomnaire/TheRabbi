@@ -20,7 +20,7 @@ export default {
   actions: {
     fetchQuestion({ commit }) {
       axios
-        .post('https://quizzes-bmo0.onrender.com/question/generate', { level: "Hard" })
+        .post('https://quizzes-bmo0.onrender.com/question/generate', { level: "Extreme" })
         .then(response => {
           const { question, answers, correct_answer } = response.data;
           commit('setQuestion', question);
