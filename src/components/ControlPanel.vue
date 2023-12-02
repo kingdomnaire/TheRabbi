@@ -1,6 +1,7 @@
 <template>
   <div class="container h-[90%] drop-shadow-md mt-3 pt-5
   px-8 bg-gray-300 md:w-[90%] justify-center max-md:h-[100%]">
+  <DeleteFastest class="float-right mr-20"/>
     <!--<FirstButton/>-->
     <QuestionBox class="w-2/4"/>
     <QuestionCategory class="ml-[52%]"/>
@@ -27,18 +28,20 @@ import ControlBtn from './panel/ControlBtn.vue';
 import QuestionBox from './panel/QuestionBox.vue';
 import QuestionCategory from './panel/QuestionCategory.vue';
 import QuestionTag from './panel/QuestionTag.vue';
+import DeleteFastest from './panel/DeleteFastest.vue';
 
 
 export default{
     components: {
-   // FirstButton,
+    // FirstButton,
     QuestionBox,
     SoundBtn,
     ControlBtn,
-   // LifeLine,
+    // LifeLine,
     //GameMeter,
     QuestionCategory,
-    QuestionTag
+    QuestionTag,
+    DeleteFastest
 }
 };
 
